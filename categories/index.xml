@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>ZCFOREVER</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ADC</title>
+        <link>https://ZCFZEUS.github.io/categories/adc/</link>
+        <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/adc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Stm32</title>
+        <link>https://ZCFZEUS.github.io/categories/stm32/</link>
+        <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/stm32/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Test</title>
         <link>https://ZCFZEUS.github.io/categories/test/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>

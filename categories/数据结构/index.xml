@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on ZCFOREVER</title>
-        <link>https://ZCFZEUS.github.io/post/</link>
-        <description>Recent content in Posts on ZCFOREVER</description>
+        <title>数据结构 on ZCFOREVER</title>
+        <link>https://ZCFZEUS.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+        <description>Recent content in 数据结构 on ZCFOREVER</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>ZCFOREVER</copyright>
-        <lastBuildDate>Wed, 02 Apr 2025 22:47:03 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Apr 2025 22:47:03 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>数据结构2.2-顺序表</title>
         <link>https://ZCFZEUS.github.io/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%842.2-%E9%A1%BA%E5%BA%8F%E8%A1%A8/</link>
         <pubDate>Wed, 02 Apr 2025 22:47:03 +0800</pubDate>
@@ -253,27 +253,6 @@ n为表长，当n = 0时线性表是一个空表.&lt;br&gt;
 &lt;p&gt;Empty(L)：&lt;mark&gt;判空操作&lt;/mark&gt;。若L为空表，则返回true，否则返回false。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;什么时候要传入参数的引用“&amp;amp;” —— 对参数的修改结果需要&lt;mark&gt;“带回来”&lt;/mark&gt;.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>ADC模数转换器</title>
-        <link>https://ZCFZEUS.github.io/p/adc%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2%E5%99%A8/</link>
-        <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/p/adc%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2%E5%99%A8/</guid>
-        <description>&lt;h2 id=&#34;adc概述&#34;&gt;ADC概述
-&lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;简介
-&lt;/h3&gt;&lt;p&gt;ADC:模数转换器
-作用：将引脚上连续变化的模拟电压转换成内存中存储的数字变量
-12位逐次逼近型ADC：1us转换时间
-输入电压范围：0&lt;del&gt;3.3V &lt;br&gt;
-结果转换范围：0&lt;/del&gt;4095&lt;/p&gt;
-&lt;h3 id=&#34;分类&#34;&gt;分类
-&lt;/h3&gt;&lt;p&gt;规则组：用于常规使用
-注入组：用于突发情况使用ADC功能&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;类似主线程和中断的关系，若触发开始转换注入组可以对正在转换的规则组进行插队。&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
         </item>
         

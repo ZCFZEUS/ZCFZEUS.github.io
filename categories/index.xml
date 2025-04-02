@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>ZCFOREVER</copyright>
-        <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Apr 2025 22:47:03 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数据结构</title>
+        <link>https://ZCFZEUS.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+        <pubDate>Wed, 02 Apr 2025 22:47:03 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>线性表</title>
+        <link>https://ZCFZEUS.github.io/categories/%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+        <pubDate>Wed, 02 Apr 2025 22:47:03 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>ADC</title>
         <link>https://ZCFZEUS.github.io/categories/adc/</link>
         <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
@@ -26,42 +42,10 @@
         <item>
         <title>Test</title>
         <link>https://ZCFZEUS.github.io/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://ZCFZEUS.github.io/categories/test/</guid>
         <description>&lt;img src="https://ZCFZEUS.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>https://ZCFZEUS.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/categories/%E6%B5%8B%E8%AF%95/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Syntax</title>
-        <link>https://ZCFZEUS.github.io/categories/syntax/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/categories/syntax/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Themes</title>
-        <link>https://ZCFZEUS.github.io/categories/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/categories/themes/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Test With Whitespaces</title>
-        <link>https://ZCFZEUS.github.io/categories/test-with-whitespaces/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/categories/test-with-whitespaces/</guid>
-        <description></description>
         </item>
         
     </channel>

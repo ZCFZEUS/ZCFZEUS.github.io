@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于应变式电阻传感器">
+<title>传感器4.1 应变式电阻传感器</title>
+
+<link rel='canonical' href='https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="传感器4.1 应变式电阻传感器">
+<meta property='og:description' content="关于应变式电阻传感器">
+<meta property='og:url' content='https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/'>
+<meta property='og:site_name' content='ZCFOREVER'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-05T11:55:07&#43;08:00'/><meta property='article:modified_time' content='2025-04-05T11:55:07&#43;08:00'/>
+<meta name="twitter:title" content="传感器4.1 应变式电阻传感器">
+<meta name="twitter:description" content="关于应变式电阻传感器">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu8917315479747473017.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💓</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZCFOREVER</a></h1>
+            <h2 class="site-description">Welcome to my blog &lt;3</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1872985538?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 14.988281 3.9902344 A 1.0001 1.0001 0 0 0 14.291016 5.7089844 L 20.585938 12.003906 L 9.9726562 12.003906 C 6.6852627 12.003906 3.9941406 14.69203 3.9941406 17.980469 L 3.9941406 37.023438 C 3.9941406 40.310831 6.6842171 43.001953 9.9726562 43.001953 L 13 43.001953 L 13 44.001953 C 13 45.105953 13.897953 46.002953 15.001953 46.001953 C 16.104953 46.001953 17.001953 45.105953 17.001953 44.001953 L 17.001953 43.001953 L 32.988281 43.001953 L 32.988281 44.001953 C 32.988281 45.105953 33.885281 46.001953 34.988281 46.001953 C 36.092281 46.002953 36.988281 45.105953 36.988281 44.001953 L 36.988281 43.001953 L 40.015625 43.001953 C 43.303019 43.001953 45.992187 40.311876 45.992188 37.023438 L 45.992188 17.980469 C 45.992188 14.692272 43.303821 12.003906 40.015625 12.003906 L 29.414062 12.003906 L 35.708984 5.7089844 A 1.001274 1.001274 0 1 0 34.292969 4.2929688 L 26.582031 12.003906 L 23.417969 12.003906 L 15.707031 4.2929688 A 1.0001 1.0001 0 0 0 14.988281 3.9902344 z M 9.9726562 14.003906 L 22.896484 14.003906 A 1.0001 1.0001 0 0 0 23.121094 14.003906 L 26.886719 14.003906 A 1.0001 1.0001 0 0 0 27.095703 14.003906 L 40.015625 14.003906 C 42.221429 14.003906 43.992188 15.774665 43.992188 17.980469 L 43.992188 37.023438 C 43.992188 39.228997 42.220231 41.001953 40.015625 41.001953 L 9.9726562 41.001953 C 7.7670954 41.001953 5.9941406 39.228043 5.9941406 37.023438 L 5.9941406 17.980469 C 5.9941406 15.774908 7.7680498 14.003906 9.9726562 14.003906 z M 20.048828 21.996094 A 1.0001 1.0001 0 0 0 19.685547 22.052734 L 13.685547 24.052734 A 1.0001 1.0001 0 1 0 14.316406 25.949219 L 20.316406 23.949219 A 1.0001 1.0001 0 0 0 20.048828 21.996094 z M 30.019531 21.996094 A 1.0001 1.0001 0 0 0 29.917969 21.998047 A 1.0001 1.0001 0 0 0 29.679688 23.949219 L 35.679688 25.949219 A 1.0001 1.0001 0 1 0 36.3125 24.052734 L 30.3125 22.052734 A 1.0001 1.0001 0 0 0 30.019531 21.996094 z M 30.953125 29.976562 A 1.0001 1.0001 0 0 0 30.033203 30.757812 C 29.884737 31.352197 29.092247 32.001953 27.994141 32.001953 C 26.905547 32.001953 26.119463 31.363968 25.962891 30.777344 A 1.0001 1.0001 0 0 0 24.029297 30.777344 C 23.871274 31.365484 23.082168 32.001953 21.996094 32.001953 C 20.896728 32.001953 20.10745 31.352196 19.958984 30.757812 A 1.0001 1.0001 0 0 0 18.923828 29.988281 A 1.0001 1.0001 0 0 0 18.017578 31.244141 C 18.39227 32.744224 19.818976 33.629517 21.433594 33.835938 A 1.0001 1.0001 0 0 0 21.996094 34.001953 A 1.0001 1.0001 0 0 0 22.556641 33.839844 C 23.55704 33.712852 24.359997 33.27658 24.996094 32.605469 C 25.759502 33.410345 26.75756 34.001953 27.994141 34.001953 C 29.864035 34.001953 31.551122 32.931757 31.972656 31.244141 A 1.0001 1.0001 0 0 0 30.953125 29.976562 z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZCFZEUS'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://music.163.com/#/user/home?id=3419641033'
+                        target="_blank"
+                        title="wyyyy"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M10.421 11.375c-.294 1.028.012 2.064.784 2.653 1.061.81 2.565.3 2.874-.995.08-.337.103-.722.027-1.056-.23-1.001-.52-1.988-.792-2.996-1.33.154-2.543 1.172-2.893 2.394zm5.548-.287c.273 1.012.285 2.017-.127 3-1.128 2.69-4.721 3.14-6.573.826-1.302-1.627-1.28-3.961.06-5.734.78-1.032 1.804-1.707 3.048-2.054l.379-.104c-.084-.415-.188-.816-.243-1.224-.176-1.317.512-2.503 1.744-3.04 1.226-.535 2.708-.216 3.53.76.406.479.395 1.08-.025 1.464-.412.377-.996.346-1.435-.09-.247-.246-.51-.44-.877-.436-.525.006-.987.418-.945.937.037.468.173.93.3 1.386.022.078.216.135.338.153 1.334.197 2.504.731 3.472 1.676 2.558 2.493 2.861 6.531.672 9.44-1.529 2.032-3.61 3.168-6.127 3.409-4.621.44-8.664-2.53-9.7-7.058C2.515 10.255 4.84 5.831 8.795 4.25c.586-.234 1.143-.031 1.371.498.232.537-.019 1.086-.61 1.35-2.368 1.06-3.817 2.855-4.215 5.424-.533 3.433 1.656 6.776 5 7.72 2.723.77 5.658-.166 7.308-2.33 1.586-2.08 1.4-5.099-.427-6.873a3.979 3.979 0 0 0-1.823-1.013c.198.716.389 1.388.57 2.062z"/>
+    </g>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://ZCFZEUS.github.io/" selected>English</option>
+                                
+                                    <option value="https://ZCFZEUS.github.io/zh-cn/" >简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#电阻应变片的种类">电阻应变片的种类</a></li>
+    <li><a href="#金属电阻应变片">金属电阻应变片</a>
+      <ol>
+        <li><a href="#结构">结构</a></li>
+        <li><a href="#分类">分类</a>
+          <ol>
+            <li><a href="#丝式应变片分回线式和短接式两种">丝式应变片（分回线式和短接式两种）</a></li>
+            <li><a href="#箔式应变片">箔式应变片</a></li>
+            <li><a href="#薄膜应变片">薄膜应变片</a></li>
+          </ol>
+        </li>
+        <li><a href="#工作原理">工作原理</a></li>
+        <li><a href="#参数">参数</a></li>
+        <li><a href="#温度误差及其补偿">温度误差及其补偿</a>
+          <ol>
+            <li><a href="#温度误差">温度误差</a></li>
+            <li><a href="#温度补偿">温度补偿</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#半导体应变片">半导体应变片</a>
+      <ol>
+        <li><a href="#半导体应变片的分类和结构">半导体应变片的分类和结构</a></li>
+        <li><a href="#半导体应变片的工作原理">半导体应变片的工作原理</a></li>
+      </ol>
+    </li>
+    <li><a href="#电阻应变片的测量电路">电阻应变片的测量电路</a>
+      <ol>
+        <li><a href="#直流电桥电路">直流电桥电路</a>
+          <ol>
+            <li><a href="#直流电桥平衡条件">直流电桥平衡条件</a></li>
+            <li><a href="#电压灵敏度">电压灵敏度</a></li>
+            <li><a href="#非线性误差及其补偿方法">非线性误差及其补偿方法</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E4%BC%A0%E6%84%9F%E5%99%A8/" >
+                传感器
+            </a>
+        
+            <a href="/categories/%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/" >
+                应变式电阻传感器
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/">传感器4.1 应变式电阻传感器</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            关于应变式电阻传感器
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 05, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="电阻应变片的种类">电阻应变片的种类
+</h2><p>常按材料、工作温度范围及用途不同分类</p>
+<blockquote>
+<p>①按应变片敏感栅的材料分类，可将应变片分成金属应变片和半导体应变片两大类。<br>
+② 按应变片的工作温度分类可分为常温应变片（20℃～60℃）、中温应变片（60℃～300℃）、高温应变片（300℃以上）和低温应变片（低于20℃）等。<br>
+③按应变片的用途分类可分为一般用途应变片和特殊用途应变片（水下、疲劳寿命、抗磁感应、裂缝扩展等）。</p>
+</blockquote>
+<h2 id="金属电阻应变片">金属电阻应变片
+</h2><h3 id="结构">结构
+</h3><p>金属电阻应变片简称应变片，其结构大体相同，如图所示。由敏感栅、基底、覆盖层、引线和黏结剂等部分组成。</p>
+<blockquote>
+<p>敏感栅：实现应变-电阻转换的敏感元件，阻值一般在<mark>100Ω以上</mark><br>
+基底：粘贴、定位、绝缘，起着准确将试件应变传递到敏感栅的作用。为此，基底通常很薄，一般为0.02-0.04mm<br>
+覆盖层：用纸或透明胶纸覆盖在敏感栅上，防潮、防尘、防蚀、防损<br>
+引线：起敏感栅与测量电路间的过渡连接和引导作用<br>
+黏结剂：传递应变<br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image.png"
+	width="487"
+	height="347"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image_hu12766635690132230593.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image_hu11022507407195622520.png 1024w"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="140"
+		data-flex-basis="336px"
+	
+></p>
+</blockquote>
+<h3 id="分类">分类
+</h3><h4 id="丝式应变片分回线式和短接式两种">丝式应变片（分回线式和短接式两种）
+</h4><p>① 回线式应变片:回线式应变片是将电阻丝绕制成栅粘在绝缘基片上制成的，如图4-2(a)<br>
+<mark>特点：制作简单、性能稳定、价格便宜</mark><br>
+② 短接式应变片:短接式应变片是将数根等长的敏感金属丝平行放置，两端用直径比金属丝大5～10倍的镀银丝短接起来而构成的，如图4-2(b)<br>
+<mark>优点：克服了回线式应变片的横向效应</mark><br>
+<mark>缺点：焊点多，易疲劳损坏</mark><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-1.png"
+	width="347"
+	height="298"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-1_hu7539910673926870182.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-1_hu9594009903961709867.png 1024w"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="116"
+		data-flex-basis="279px"
+	
+></p>
+<h4 id="箔式应变片">箔式应变片
+</h4><p>箔式应变片是将很薄的金属片粘于基片上，经光刻、腐蚀等制成金属箔敏感栅。给箔敏感栅接上金属丝电极，再涂覆与基片同质料的覆盖层。结构如图4-3所示<br>
+<mark>优点：尺寸准确、线条均匀、可按需要做成各种形状、横向效应小、散热好、准确传递、薄、柔、寿命长、稳定性好</mark><br>
+<mark>缺点：灵敏度较低</mark><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-2.png"
+	width="556"
+	height="370"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-2_hu16738460662468428991.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-2_hu8747351693597367403.png 1024w"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="150"
+		data-flex-basis="360px"
+	
+></p>
+<h4 id="薄膜应变片">薄膜应变片
+</h4><p>薄膜应变片是薄膜技术发展的产物。它是采用真空蒸发或真空沉积等方法，在薄的绝缘基片上形成厚度在0.1µm下的金属电阻材料薄膜的敏感栅，最后加上保护层。<br>
+<mark>优点：应变灵敏系数大，允许电流密度大，工作范围广，温度可达197～371℃</mark><br>
+<mark>缺点：难以控制电阻与温度和时间的变化关系</mark></p>
+<h3 id="工作原理">工作原理
+</h3><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-3.png"
+	width="1504"
+	height="981"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-3_hu10124749099725067705.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-3_hu2345033880576756746.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="153"
+		data-flex-basis="367px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-4.png"
+	width="1529"
+	height="861"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-4_hu3665354573214008932.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-4_hu13104160849472393174.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-6.png"
+	width="968"
+	height="530"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-6_hu8323834162375046135.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-6_hu5770648382524642937.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="182"
+		data-flex-basis="438px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-7.png"
+	width="1041"
+	height="627"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-7_hu5965846295816296547.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-7_hu2559212727031627917.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="398px"
+	
+></p>
+<h3 id="参数">参数
+</h3><p>金属电阻应变片的主要参数有：<br>
+（1）应变片电阻值R<br>
+（2）灵敏系数k<br>
+（3）机械滞后Z<sub>j</sub><br>
+（4）横向效应及横向效应系数H<br>
+（5）零漂P和蠕变θ<br>
+（6）绝缘电阻R<sub>m</sub></p>
+<blockquote>
+<p>应变片电阻值R:应变片没有粘贴及未参与变形前，室温下测定的电阻值称为初始电阻值，其中120Ω最常用，应变片电阻值的大小应与测量电阻相配合</p>
+</blockquote>
+<blockquote>
+<p>灵敏系数k：衡量应变片质量的重要标志</p>
+</blockquote>
+<blockquote>
+<p>机械滞后Z<sub>j</sub>：实际应用中，由于敏感栅基底和黏结剂材料性能，或者使用过程中的过载、过热，都会使应变计产生残余形变，导致应变片输出的不重合。这种不重合用机械滞后Z<sub>j</sub>来衡量。它是指粘贴在试件上的应变片，在恒温条件下增（加载）、减（卸载）试件应变的过程中，对应同一机械应变所指示应变量（输出）之差。通常，在室温条件下，要求机械滞后Z<sub>j</sub> &lt; 3-10με。实测中，可在测试前通过多次重复预加、卸载，来减小机械滞后产生的误差</p>
+</blockquote>
+<blockquote>
+<p>横向效应及横向效应系数H<br>
+横向效应：应变片在感受被测试件的应变时，横向应变将使其电阻变化率减小，从而降低灵敏系数，称为应变片的横向效应<br>
+横向效应系数H：垂直时与平行时应变之比</p>
+</blockquote>
+<blockquote>
+<p>零漂P和蠕变θ<br>
+零漂：温度恒定、试件初始空载时，应变片电阻值随时间变化的特性。两者之差即为零漂或稳定性误差。可用相对误差或绝对误差表示</p>
+</blockquote>
+<blockquote>
+<p>绝缘电阻R<sub>m</sub>:略，懒得写了</p>
+</blockquote>
+<h3 id="温度误差及其补偿">温度误差及其补偿
+</h3><h4 id="温度误差">温度误差
+</h4><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-8.png"
+	width="975"
+	height="391"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-8_hu4346026428285536285.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-8_hu15285672457139523317.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="249"
+		data-flex-basis="598px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-9.png"
+	width="995"
+	height="515"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-9_hu9237489172338596592.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-9_hu16941127604633315183.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="193"
+		data-flex-basis="463px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-10.png"
+	width="1085"
+	height="681"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-10_hu8367207201705286965.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-10_hu739743500593215609.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="159"
+		data-flex-basis="382px"
+	
+></p>
+<h4 id="温度补偿">温度补偿
+</h4><h5 id="单丝自补偿应变片">单丝自补偿应变片
+</h5><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-11.png"
+	width="1000"
+	height="515"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-11_hu8894739369572253509.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-11_hu13805943812858664389.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="466px"
+	
+><br>
+<mark>优点：结构简单，制造、使用方便</mark><br>
+<mark>缺点：一种α<sub>t</sub>值的应变片只能对应在一种材料上应用，局限性大</mark></p>
+<h5 id="双丝自补偿应变片">双丝自补偿应变片
+</h5><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-12.png"
+	width="969"
+	height="529"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-12_hu14015942278560510450.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-12_hu4046794734032677731.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="183"
+		data-flex-basis="439px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-13.png"
+	width="993"
+	height="385"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-13_hu4257944117397578007.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-13_hu8088401741128632227.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="257"
+		data-flex-basis="619px"
+	
+></p>
+<h5 id="电桥补偿法">电桥补偿法
+</h5><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-14.png"
+	width="1012"
+	height="496"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-14_hu11274578567356488692.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-14_hu8569641825433665860.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="204"
+		data-flex-basis="489px"
+	
+></p>
+<h2 id="半导体应变片">半导体应变片
+</h2><h3 id="半导体应变片的分类和结构">半导体应变片的分类和结构
+</h3><p>按照材料类型分为P型硅应变片、N型硅应变片、PN互补型应变片<br>
+按照特性分为灵敏系数补偿型应变片和非线性补偿应变片<br>
+按照材料的化学成分分为硅、锗、锑化铟、磷化镓、磷化铟等应变片<br>
+目前应用较多的是按照结构分类，包括体型应变片、扩散型应变片和薄膜型半导体应变计</p>
+<h3 id="半导体应变片的工作原理">半导体应变片的工作原理
+</h3><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-15.png"
+	width="958"
+	height="558"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-15_hu1643327217437017842.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-15_hu12833951017801785636.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="171"
+		data-flex-basis="412px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-16.png"
+	width="989"
+	height="582"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-16_hu11128036503732416687.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-16_hu10465368697814995230.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="169"
+		data-flex-basis="407px"
+	
+><br>
+<mark>优点：尺寸、横向效应、机械滞后都很小，灵敏系数极大，因而输出也大，可以不需要放大器直接与记录仪器连接，使得测量系统简化</mark><br>
+<mark>缺点：测量较大应变时非线性严重，灵敏系数随受拉或受压而变，且分散度大，一般为3%-5%</mark></p>
+<h2 id="电阻应变片的测量电路">电阻应变片的测量电路
+</h2><p>电阻应变片把机械应变信号转换成后，由于应变量及其应变电阻变化一般都很微小，既难以直接精确测量，又不便直接处理，因此，必须采用转换电路或仪器，把应变片的变化转换成电压或电流变化。通常，采用电桥电路实现这种转换。</p>
+<h3 id="直流电桥电路">直流电桥电路
+</h3><h4 id="直流电桥平衡条件">直流电桥平衡条件
+</h4><p>图4-6所示为直流电桥的基本电路，E为电桥电源电压，R1、R2、R3、R4为电桥的桥臂，RL为其负载（可以是测量仪表的内阻或其他负载）。<br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-17.png"
+	width="588"
+	height="584"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-17_hu18303370906833159603.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-17_hu9279867537113173965.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="241px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-18.png"
+	width="1001"
+	height="527"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-18_hu1103836561306962017.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-18_hu4307108838738846838.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="189"
+		data-flex-basis="455px"
+	
+></p>
+<h4 id="电压灵敏度">电压灵敏度
+</h4><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-19.png"
+	width="960"
+	height="588"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-19_hu6069277254240519333.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-19_hu12769687807903448708.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="163"
+		data-flex-basis="391px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-20.png"
+	width="987"
+	height="463"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-20_hu2917648023223842498.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-20_hu2853387291835713204.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="213"
+		data-flex-basis="511px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-21.png"
+	width="1032"
+	height="559"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-21_hu17898899769732201741.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-21_hu3305772229180030996.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="443px"
+	
+></p>
+<h4 id="非线性误差及其补偿方法">非线性误差及其补偿方法
+</h4><p><img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-22.png"
+	width="1014"
+	height="606"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-22_hu16580010881544372251.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-22_hu10453053039067129123.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="401px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-23.png"
+	width="998"
+	height="556"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-23_hu7061986841321219489.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-23_hu15956106697204937368.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="179"
+		data-flex-basis="430px"
+	
+></p>
+<h5 id="提高桥臂比">提高桥臂比
+</h5><p>提高桥臂比可减小非线性误差。但是从电压灵敏度来考虑，提高桥臂比会降低电压灵敏度。因此，为达到既减小非线性误差又不降低电压灵敏度的目的，必须适当提高电源电压E</p>
+<h5 id="采用差动电桥">采用差动电桥
+</h5><p>根据被测试件的受力情况，在同一试件上分别粘贴两个应变片，一个感受拉力，另一个感受压力，两者应变符号相反，测试时，将两个应变片接入电桥的相邻臂上，如图4.7所示，称此电桥电路为半桥差动电路<br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-24.png"
+	width="548"
+	height="511"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-24_hu16796280564408320772.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-24_hu2831453271991377007.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="107"
+		data-flex-basis="257px"
+	
+><br>
+<mark>优点：差动电桥无非线性误差，而且电压灵敏度为S<sub>v</sub>=0.5E,比使用一只应变片提高了1倍，同时可以起到温度补偿的作用</mark><br>
+给电桥的四臂接入4片应变片，使两个桥臂应变片受到拉力，两个桥臂应变片受到压力，将两个应变符号相同的接入相对桥臂上，则构成全桥差动电路。差动桥路的输出电压和电压灵敏度比单片提高了4倍，比半桥差动电路提高了1倍<br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-25.png"
+	width="598"
+	height="558"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-25_hu12791941131501632081.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-25_hu17113844120000345550.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="107"
+		data-flex-basis="257px"
+	
+></p>
+<h5 id="采用高内阻的恒流源电桥">采用高内阻的恒流源电桥
+</h5><p>产生非线性的原因之一是，在工作过程中通过桥臂的电流不恒定。所以有时用恒流电源供电。如图4-9所示。一般情况下，半导体应变电桥都采用恒流供电，供电电流为 ，通过各臂的电流分别为 和 ，如果测量电路的输入阻抗较高，则I1(R1+R2)=I2(R3+R4),I0=I1+I2,解方程可求得I1和I2<br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-26.png"
+	width="736"
+	height="661"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-26_hu3171460154716028334.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-26_hu12016001612044687988.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="111"
+		data-flex-basis="267px"
+	
+><br>
+<img src="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-27.png"
+	width="1018"
+	height="603"
+	srcset="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-27_hu16946045747163303023.png 480w, /p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-27_hu131159495654460405.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="168"
+		data-flex-basis="405px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E4%BC%A0%E6%84%9F%E5%99%A84.2-%E5%8E%8B%E7%94%B5%E5%BC%8F%E5%8A%9B%E4%BC%A0%E6%84%9F%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">传感器4.2 压电式力传感器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2005 - 
+        
+        2025 ZCFOREVER
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<meting-js
+	server="netease"
+	type="playlist"
+	id="13516764791">
+</meting-js>
+
+<script>
+
+
+const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+const cssPath = "https://ZCFZEUS.github.io/waifu/waifu.css"
+
+
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(cssPath, "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.js", "js")
+	]).then(() => {
+		
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			
+			cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
+			tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+		});
+	});
+}
+
+
+
+
+</script>
+
+
+    </body>
+</html>

@@ -7,7 +7,448 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>ZCFOREVER</copyright>
-        <lastBuildDate>Wed, 02 Apr 2025 22:47:03 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 05 Apr 2025 11:55:07 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>传感器4.1 应变式电阻传感器</title>
+        <link>https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/</link>
+        <pubDate>Sat, 05 Apr 2025 11:55:07 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/</guid>
+        <description>&lt;h2 id=&#34;电阻应变片的种类&#34;&gt;电阻应变片的种类
+&lt;/h2&gt;&lt;p&gt;常按材料、工作温度范围及用途不同分类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;①按应变片敏感栅的材料分类，可将应变片分成金属应变片和半导体应变片两大类。&lt;br&gt;
+② 按应变片的工作温度分类可分为常温应变片（20℃～60℃）、中温应变片（60℃～300℃）、高温应变片（300℃以上）和低温应变片（低于20℃）等。&lt;br&gt;
+③按应变片的用途分类可分为一般用途应变片和特殊用途应变片（水下、疲劳寿命、抗磁感应、裂缝扩展等）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;金属电阻应变片&#34;&gt;金属电阻应变片
+&lt;/h2&gt;&lt;h3 id=&#34;结构&#34;&gt;结构
+&lt;/h3&gt;&lt;p&gt;金属电阻应变片简称应变片，其结构大体相同，如图所示。由敏感栅、基底、覆盖层、引线和黏结剂等部分组成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;敏感栅：实现应变-电阻转换的敏感元件，阻值一般在&lt;mark&gt;100Ω以上&lt;/mark&gt;&lt;br&gt;
+基底：粘贴、定位、绝缘，起着准确将试件应变传递到敏感栅的作用。为此，基底通常很薄，一般为0.02-0.04mm&lt;br&gt;
+覆盖层：用纸或透明胶纸覆盖在敏感栅上，防潮、防尘、防蚀、防损&lt;br&gt;
+引线：起敏感栅与测量电路间的过渡连接和引导作用&lt;br&gt;
+黏结剂：传递应变&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image.png&#34;
+	width=&#34;487&#34;
+	height=&#34;347&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image_hu12766635690132230593.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image_hu11022507407195622520.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;140&#34;
+		data-flex-basis=&#34;336px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;分类&#34;&gt;分类
+&lt;/h3&gt;&lt;h4 id=&#34;丝式应变片分回线式和短接式两种&#34;&gt;丝式应变片（分回线式和短接式两种）
+&lt;/h4&gt;&lt;p&gt;① 回线式应变片:回线式应变片是将电阻丝绕制成栅粘在绝缘基片上制成的，如图4-2(a)&lt;br&gt;
+&lt;mark&gt;特点：制作简单、性能稳定、价格便宜&lt;/mark&gt;&lt;br&gt;
+② 短接式应变片:短接式应变片是将数根等长的敏感金属丝平行放置，两端用直径比金属丝大5～10倍的镀银丝短接起来而构成的，如图4-2(b)&lt;br&gt;
+&lt;mark&gt;优点：克服了回线式应变片的横向效应&lt;/mark&gt;&lt;br&gt;
+&lt;mark&gt;缺点：焊点多，易疲劳损坏&lt;/mark&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-1.png&#34;
+	width=&#34;347&#34;
+	height=&#34;298&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-1_hu7539910673926870182.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-1_hu9594009903961709867.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;116&#34;
+		data-flex-basis=&#34;279px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;箔式应变片&#34;&gt;箔式应变片
+&lt;/h4&gt;&lt;p&gt;箔式应变片是将很薄的金属片粘于基片上，经光刻、腐蚀等制成金属箔敏感栅。给箔敏感栅接上金属丝电极，再涂覆与基片同质料的覆盖层。结构如图4-3所示&lt;br&gt;
+&lt;mark&gt;优点：尺寸准确、线条均匀、可按需要做成各种形状、横向效应小、散热好、准确传递、薄、柔、寿命长、稳定性好&lt;/mark&gt;&lt;br&gt;
+&lt;mark&gt;缺点：灵敏度较低&lt;/mark&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-2.png&#34;
+	width=&#34;556&#34;
+	height=&#34;370&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-2_hu16738460662468428991.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-2_hu8747351693597367403.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;薄膜应变片&#34;&gt;薄膜应变片
+&lt;/h4&gt;&lt;p&gt;薄膜应变片是薄膜技术发展的产物。它是采用真空蒸发或真空沉积等方法，在薄的绝缘基片上形成厚度在0.1µm下的金属电阻材料薄膜的敏感栅，最后加上保护层。&lt;br&gt;
+&lt;mark&gt;优点：应变灵敏系数大，允许电流密度大，工作范围广，温度可达197～371℃&lt;/mark&gt;&lt;br&gt;
+&lt;mark&gt;缺点：难以控制电阻与温度和时间的变化关系&lt;/mark&gt;&lt;/p&gt;
+&lt;h3 id=&#34;工作原理&#34;&gt;工作原理
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-3.png&#34;
+	width=&#34;1504&#34;
+	height=&#34;981&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-3_hu10124749099725067705.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-3_hu2345033880576756746.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;153&#34;
+		data-flex-basis=&#34;367px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-4.png&#34;
+	width=&#34;1529&#34;
+	height=&#34;861&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-4_hu3665354573214008932.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-4_hu13104160849472393174.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-6.png&#34;
+	width=&#34;968&#34;
+	height=&#34;530&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-6_hu8323834162375046135.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-6_hu5770648382524642937.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;182&#34;
+		data-flex-basis=&#34;438px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-7.png&#34;
+	width=&#34;1041&#34;
+	height=&#34;627&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-7_hu5965846295816296547.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-7_hu2559212727031627917.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;166&#34;
+		data-flex-basis=&#34;398px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参数&#34;&gt;参数
+&lt;/h3&gt;&lt;p&gt;金属电阻应变片的主要参数有：&lt;br&gt;
+（1）应变片电阻值R&lt;br&gt;
+（2）灵敏系数k&lt;br&gt;
+（3）机械滞后Z&lt;sub&gt;j&lt;/sub&gt;&lt;br&gt;
+（4）横向效应及横向效应系数H&lt;br&gt;
+（5）零漂P和蠕变θ&lt;br&gt;
+（6）绝缘电阻R&lt;sub&gt;m&lt;/sub&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;应变片电阻值R:应变片没有粘贴及未参与变形前，室温下测定的电阻值称为初始电阻值，其中120Ω最常用，应变片电阻值的大小应与测量电阻相配合&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;灵敏系数k：衡量应变片质量的重要标志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;机械滞后Z&lt;sub&gt;j&lt;/sub&gt;：实际应用中，由于敏感栅基底和黏结剂材料性能，或者使用过程中的过载、过热，都会使应变计产生残余形变，导致应变片输出的不重合。这种不重合用机械滞后Z&lt;sub&gt;j&lt;/sub&gt;来衡量。它是指粘贴在试件上的应变片，在恒温条件下增（加载）、减（卸载）试件应变的过程中，对应同一机械应变所指示应变量（输出）之差。通常，在室温条件下，要求机械滞后Z&lt;sub&gt;j&lt;/sub&gt; &amp;lt; 3-10με。实测中，可在测试前通过多次重复预加、卸载，来减小机械滞后产生的误差&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;横向效应及横向效应系数H&lt;br&gt;
+横向效应：应变片在感受被测试件的应变时，横向应变将使其电阻变化率减小，从而降低灵敏系数，称为应变片的横向效应&lt;br&gt;
+横向效应系数H：垂直时与平行时应变之比&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;零漂P和蠕变θ&lt;br&gt;
+零漂：温度恒定、试件初始空载时，应变片电阻值随时间变化的特性。两者之差即为零漂或稳定性误差。可用相对误差或绝对误差表示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;绝缘电阻R&lt;sub&gt;m&lt;/sub&gt;:略，懒得写了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;温度误差及其补偿&#34;&gt;温度误差及其补偿
+&lt;/h3&gt;&lt;h4 id=&#34;温度误差&#34;&gt;温度误差
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-8.png&#34;
+	width=&#34;975&#34;
+	height=&#34;391&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-8_hu4346026428285536285.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-8_hu15285672457139523317.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;249&#34;
+		data-flex-basis=&#34;598px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-9.png&#34;
+	width=&#34;995&#34;
+	height=&#34;515&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-9_hu9237489172338596592.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-9_hu16941127604633315183.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;193&#34;
+		data-flex-basis=&#34;463px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-10.png&#34;
+	width=&#34;1085&#34;
+	height=&#34;681&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-10_hu8367207201705286965.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-10_hu739743500593215609.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;159&#34;
+		data-flex-basis=&#34;382px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;温度补偿&#34;&gt;温度补偿
+&lt;/h4&gt;&lt;h5 id=&#34;单丝自补偿应变片&#34;&gt;单丝自补偿应变片
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-11.png&#34;
+	width=&#34;1000&#34;
+	height=&#34;515&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-11_hu8894739369572253509.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-11_hu13805943812858664389.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;194&#34;
+		data-flex-basis=&#34;466px&#34;
+	
+&gt;&lt;br&gt;
+&lt;mark&gt;优点：结构简单，制造、使用方便&lt;/mark&gt;&lt;br&gt;
+&lt;mark&gt;缺点：一种α&lt;sub&gt;t&lt;/sub&gt;值的应变片只能对应在一种材料上应用，局限性大&lt;/mark&gt;&lt;/p&gt;
+&lt;h5 id=&#34;双丝自补偿应变片&#34;&gt;双丝自补偿应变片
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-12.png&#34;
+	width=&#34;969&#34;
+	height=&#34;529&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-12_hu14015942278560510450.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-12_hu4046794734032677731.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;183&#34;
+		data-flex-basis=&#34;439px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-13.png&#34;
+	width=&#34;993&#34;
+	height=&#34;385&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-13_hu4257944117397578007.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-13_hu8088401741128632227.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;257&#34;
+		data-flex-basis=&#34;619px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;电桥补偿法&#34;&gt;电桥补偿法
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-14.png&#34;
+	width=&#34;1012&#34;
+	height=&#34;496&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-14_hu11274578567356488692.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-14_hu8569641825433665860.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;204&#34;
+		data-flex-basis=&#34;489px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;半导体应变片&#34;&gt;半导体应变片
+&lt;/h2&gt;&lt;h3 id=&#34;半导体应变片的分类和结构&#34;&gt;半导体应变片的分类和结构
+&lt;/h3&gt;&lt;p&gt;按照材料类型分为P型硅应变片、N型硅应变片、PN互补型应变片&lt;br&gt;
+按照特性分为灵敏系数补偿型应变片和非线性补偿应变片&lt;br&gt;
+按照材料的化学成分分为硅、锗、锑化铟、磷化镓、磷化铟等应变片&lt;br&gt;
+目前应用较多的是按照结构分类，包括体型应变片、扩散型应变片和薄膜型半导体应变计&lt;/p&gt;
+&lt;h3 id=&#34;半导体应变片的工作原理&#34;&gt;半导体应变片的工作原理
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-15.png&#34;
+	width=&#34;958&#34;
+	height=&#34;558&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-15_hu1643327217437017842.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-15_hu12833951017801785636.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;171&#34;
+		data-flex-basis=&#34;412px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-16.png&#34;
+	width=&#34;989&#34;
+	height=&#34;582&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-16_hu11128036503732416687.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-16_hu10465368697814995230.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;169&#34;
+		data-flex-basis=&#34;407px&#34;
+	
+&gt;&lt;br&gt;
+&lt;mark&gt;优点：尺寸、横向效应、机械滞后都很小，灵敏系数极大，因而输出也大，可以不需要放大器直接与记录仪器连接，使得测量系统简化&lt;/mark&gt;&lt;br&gt;
+&lt;mark&gt;缺点：测量较大应变时非线性严重，灵敏系数随受拉或受压而变，且分散度大，一般为3%-5%&lt;/mark&gt;&lt;/p&gt;
+&lt;h2 id=&#34;电阻应变片的测量电路&#34;&gt;电阻应变片的测量电路
+&lt;/h2&gt;&lt;p&gt;电阻应变片把机械应变信号转换成后，由于应变量及其应变电阻变化一般都很微小，既难以直接精确测量，又不便直接处理，因此，必须采用转换电路或仪器，把应变片的变化转换成电压或电流变化。通常，采用电桥电路实现这种转换。&lt;/p&gt;
+&lt;h3 id=&#34;直流电桥电路&#34;&gt;直流电桥电路
+&lt;/h3&gt;&lt;h4 id=&#34;直流电桥平衡条件&#34;&gt;直流电桥平衡条件
+&lt;/h4&gt;&lt;p&gt;图4-6所示为直流电桥的基本电路，E为电桥电源电压，R1、R2、R3、R4为电桥的桥臂，RL为其负载（可以是测量仪表的内阻或其他负载）。&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-17.png&#34;
+	width=&#34;588&#34;
+	height=&#34;584&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-17_hu18303370906833159603.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-17_hu9279867537113173965.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;241px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-18.png&#34;
+	width=&#34;1001&#34;
+	height=&#34;527&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-18_hu1103836561306962017.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-18_hu4307108838738846838.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;189&#34;
+		data-flex-basis=&#34;455px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;电压灵敏度&#34;&gt;电压灵敏度
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-19.png&#34;
+	width=&#34;960&#34;
+	height=&#34;588&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-19_hu6069277254240519333.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-19_hu12769687807903448708.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;163&#34;
+		data-flex-basis=&#34;391px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-20.png&#34;
+	width=&#34;987&#34;
+	height=&#34;463&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-20_hu2917648023223842498.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-20_hu2853387291835713204.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;213&#34;
+		data-flex-basis=&#34;511px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-21.png&#34;
+	width=&#34;1032&#34;
+	height=&#34;559&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-21_hu17898899769732201741.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-21_hu3305772229180030996.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;184&#34;
+		data-flex-basis=&#34;443px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;非线性误差及其补偿方法&#34;&gt;非线性误差及其补偿方法
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-22.png&#34;
+	width=&#34;1014&#34;
+	height=&#34;606&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-22_hu16580010881544372251.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-22_hu10453053039067129123.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;401px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-23.png&#34;
+	width=&#34;998&#34;
+	height=&#34;556&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-23_hu7061986841321219489.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-23_hu15956106697204937368.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;179&#34;
+		data-flex-basis=&#34;430px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;提高桥臂比&#34;&gt;提高桥臂比
+&lt;/h5&gt;&lt;p&gt;提高桥臂比可减小非线性误差。但是从电压灵敏度来考虑，提高桥臂比会降低电压灵敏度。因此，为达到既减小非线性误差又不降低电压灵敏度的目的，必须适当提高电源电压E&lt;/p&gt;
+&lt;h5 id=&#34;采用差动电桥&#34;&gt;采用差动电桥
+&lt;/h5&gt;&lt;p&gt;根据被测试件的受力情况，在同一试件上分别粘贴两个应变片，一个感受拉力，另一个感受压力，两者应变符号相反，测试时，将两个应变片接入电桥的相邻臂上，如图4.7所示，称此电桥电路为半桥差动电路&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-24.png&#34;
+	width=&#34;548&#34;
+	height=&#34;511&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-24_hu16796280564408320772.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-24_hu2831453271991377007.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;257px&#34;
+	
+&gt;&lt;br&gt;
+&lt;mark&gt;优点：差动电桥无非线性误差，而且电压灵敏度为S&lt;sub&gt;v&lt;/sub&gt;=0.5E,比使用一只应变片提高了1倍，同时可以起到温度补偿的作用&lt;/mark&gt;&lt;br&gt;
+给电桥的四臂接入4片应变片，使两个桥臂应变片受到拉力，两个桥臂应变片受到压力，将两个应变符号相同的接入相对桥臂上，则构成全桥差动电路。差动桥路的输出电压和电压灵敏度比单片提高了4倍，比半桥差动电路提高了1倍&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-25.png&#34;
+	width=&#34;598&#34;
+	height=&#34;558&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-25_hu12791941131501632081.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-25_hu17113844120000345550.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;257px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;采用高内阻的恒流源电桥&#34;&gt;采用高内阻的恒流源电桥
+&lt;/h5&gt;&lt;p&gt;产生非线性的原因之一是，在工作过程中通过桥臂的电流不恒定。所以有时用恒流电源供电。如图4-9所示。一般情况下，半导体应变电桥都采用恒流供电，供电电流为 ，通过各臂的电流分别为 和 ，如果测量电路的输入阻抗较高，则I1(R1+R2)=I2(R3+R4),I0=I1+I2,解方程可求得I1和I2&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-26.png&#34;
+	width=&#34;736&#34;
+	height=&#34;661&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-26_hu3171460154716028334.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-26_hu12016001612044687988.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;111&#34;
+		data-flex-basis=&#34;267px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-27.png&#34;
+	width=&#34;1018&#34;
+	height=&#34;603&#34;
+	srcset=&#34;https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-27_hu16946045747163303023.png 480w, https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.1-%E5%BA%94%E5%8F%98%E5%BC%8F%E7%94%B5%E9%98%BB%E4%BC%A0%E6%84%9F%E5%99%A8/image-27_hu131159495654460405.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;168&#34;
+		data-flex-basis=&#34;405px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>传感器4.2 压电式力传感器</title>
+        <link>https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.2-%E5%8E%8B%E7%94%B5%E5%BC%8F%E5%8A%9B%E4%BC%A0%E6%84%9F%E5%99%A8/</link>
+        <pubDate>Fri, 04 Apr 2025 19:38:27 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/p/%E4%BC%A0%E6%84%9F%E5%99%A84.2-%E5%8E%8B%E7%94%B5%E5%BC%8F%E5%8A%9B%E4%BC%A0%E6%84%9F%E5%99%A8/</guid>
+        <description>&lt;h2 id=&#34;heading&#34;&gt;
+&lt;/h2&gt;</description>
+        </item>
+        <item>
         <title>数据结构2.2-顺序表</title>
         <link>https://ZCFZEUS.github.io/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%842.2-%E9%A1%BA%E5%BA%8F%E8%A1%A8/</link>
         <pubDate>Wed, 02 Apr 2025 22:47:03 +0800</pubDate>
@@ -253,27 +694,6 @@ n为表长，当n = 0时线性表是一个空表.&lt;br&gt;
 &lt;p&gt;Empty(L)：&lt;mark&gt;判空操作&lt;/mark&gt;。若L为空表，则返回true，否则返回false。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;什么时候要传入参数的引用“&amp;amp;” —— 对参数的修改结果需要&lt;mark&gt;“带回来”&lt;/mark&gt;.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>ADC模数转换器</title>
-        <link>https://ZCFZEUS.github.io/p/adc%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2%E5%99%A8/</link>
-        <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/p/adc%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2%E5%99%A8/</guid>
-        <description>&lt;h2 id=&#34;adc概述&#34;&gt;ADC概述
-&lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;简介
-&lt;/h3&gt;&lt;p&gt;ADC:模数转换器
-作用：将引脚上连续变化的模拟电压转换成内存中存储的数字变量
-12位逐次逼近型ADC：1us转换时间
-输入电压范围：0&lt;del&gt;3.3V &lt;br&gt;
-结果转换范围：0&lt;/del&gt;4095&lt;/p&gt;
-&lt;h3 id=&#34;分类&#34;&gt;分类
-&lt;/h3&gt;&lt;p&gt;规则组：用于常规使用
-注入组：用于突发情况使用ADC功能&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;类似主线程和中断的关系，若触发开始转换注入组可以对正在转换的规则组进行插队。&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
         </item>
         <item>

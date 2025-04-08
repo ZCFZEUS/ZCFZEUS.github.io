@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于GPIO">
+<title>Stm32(1) GPIO</title>
+
+<link rel='canonical' href='https://ZCFZEUS.github.io/p/stm321-gpio/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Stm32(1) GPIO">
+<meta property='og:description' content="关于GPIO">
+<meta property='og:url' content='https://ZCFZEUS.github.io/p/stm321-gpio/'>
+<meta property='og:site_name' content='ZCFOREVER'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-08T14:53:44&#43;08:00'/><meta property='article:modified_time' content='2025-04-08T14:53:44&#43;08:00'/>
+<meta name="twitter:title" content="Stm32(1) GPIO">
+<meta name="twitter:description" content="关于GPIO">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu8917315479747473017.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💓</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZCFOREVER</a></h1>
+            <h2 class="site-description">Welcome to my blog &lt;3</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1872985538?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 14.988281 3.9902344 A 1.0001 1.0001 0 0 0 14.291016 5.7089844 L 20.585938 12.003906 L 9.9726562 12.003906 C 6.6852627 12.003906 3.9941406 14.69203 3.9941406 17.980469 L 3.9941406 37.023438 C 3.9941406 40.310831 6.6842171 43.001953 9.9726562 43.001953 L 13 43.001953 L 13 44.001953 C 13 45.105953 13.897953 46.002953 15.001953 46.001953 C 16.104953 46.001953 17.001953 45.105953 17.001953 44.001953 L 17.001953 43.001953 L 32.988281 43.001953 L 32.988281 44.001953 C 32.988281 45.105953 33.885281 46.001953 34.988281 46.001953 C 36.092281 46.002953 36.988281 45.105953 36.988281 44.001953 L 36.988281 43.001953 L 40.015625 43.001953 C 43.303019 43.001953 45.992187 40.311876 45.992188 37.023438 L 45.992188 17.980469 C 45.992188 14.692272 43.303821 12.003906 40.015625 12.003906 L 29.414062 12.003906 L 35.708984 5.7089844 A 1.001274 1.001274 0 1 0 34.292969 4.2929688 L 26.582031 12.003906 L 23.417969 12.003906 L 15.707031 4.2929688 A 1.0001 1.0001 0 0 0 14.988281 3.9902344 z M 9.9726562 14.003906 L 22.896484 14.003906 A 1.0001 1.0001 0 0 0 23.121094 14.003906 L 26.886719 14.003906 A 1.0001 1.0001 0 0 0 27.095703 14.003906 L 40.015625 14.003906 C 42.221429 14.003906 43.992188 15.774665 43.992188 17.980469 L 43.992188 37.023438 C 43.992188 39.228997 42.220231 41.001953 40.015625 41.001953 L 9.9726562 41.001953 C 7.7670954 41.001953 5.9941406 39.228043 5.9941406 37.023438 L 5.9941406 17.980469 C 5.9941406 15.774908 7.7680498 14.003906 9.9726562 14.003906 z M 20.048828 21.996094 A 1.0001 1.0001 0 0 0 19.685547 22.052734 L 13.685547 24.052734 A 1.0001 1.0001 0 1 0 14.316406 25.949219 L 20.316406 23.949219 A 1.0001 1.0001 0 0 0 20.048828 21.996094 z M 30.019531 21.996094 A 1.0001 1.0001 0 0 0 29.917969 21.998047 A 1.0001 1.0001 0 0 0 29.679688 23.949219 L 35.679688 25.949219 A 1.0001 1.0001 0 1 0 36.3125 24.052734 L 30.3125 22.052734 A 1.0001 1.0001 0 0 0 30.019531 21.996094 z M 30.953125 29.976562 A 1.0001 1.0001 0 0 0 30.033203 30.757812 C 29.884737 31.352197 29.092247 32.001953 27.994141 32.001953 C 26.905547 32.001953 26.119463 31.363968 25.962891 30.777344 A 1.0001 1.0001 0 0 0 24.029297 30.777344 C 23.871274 31.365484 23.082168 32.001953 21.996094 32.001953 C 20.896728 32.001953 20.10745 31.352196 19.958984 30.757812 A 1.0001 1.0001 0 0 0 18.923828 29.988281 A 1.0001 1.0001 0 0 0 18.017578 31.244141 C 18.39227 32.744224 19.818976 33.629517 21.433594 33.835938 A 1.0001 1.0001 0 0 0 21.996094 34.001953 A 1.0001 1.0001 0 0 0 22.556641 33.839844 C 23.55704 33.712852 24.359997 33.27658 24.996094 32.605469 C 25.759502 33.410345 26.75756 34.001953 27.994141 34.001953 C 29.864035 34.001953 31.551122 32.931757 31.972656 31.244141 A 1.0001 1.0001 0 0 0 30.953125 29.976562 z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZCFZEUS'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://music.163.com/#/user/home?id=3419641033'
+                        target="_blank"
+                        title="wyyyy"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M10.421 11.375c-.294 1.028.012 2.064.784 2.653 1.061.81 2.565.3 2.874-.995.08-.337.103-.722.027-1.056-.23-1.001-.52-1.988-.792-2.996-1.33.154-2.543 1.172-2.893 2.394zm5.548-.287c.273 1.012.285 2.017-.127 3-1.128 2.69-4.721 3.14-6.573.826-1.302-1.627-1.28-3.961.06-5.734.78-1.032 1.804-1.707 3.048-2.054l.379-.104c-.084-.415-.188-.816-.243-1.224-.176-1.317.512-2.503 1.744-3.04 1.226-.535 2.708-.216 3.53.76.406.479.395 1.08-.025 1.464-.412.377-.996.346-1.435-.09-.247-.246-.51-.44-.877-.436-.525.006-.987.418-.945.937.037.468.173.93.3 1.386.022.078.216.135.338.153 1.334.197 2.504.731 3.472 1.676 2.558 2.493 2.861 6.531.672 9.44-1.529 2.032-3.61 3.168-6.127 3.409-4.621.44-8.664-2.53-9.7-7.058C2.515 10.255 4.84 5.831 8.795 4.25c.586-.234 1.143-.031 1.371.498.232.537-.019 1.086-.61 1.35-2.368 1.06-3.817 2.855-4.215 5.424-.533 3.433 1.656 6.776 5 7.72 2.723.77 5.658-.166 7.308-2.33 1.586-2.08 1.4-5.099-.427-6.873a3.979 3.979 0 0 0-1.823-1.013c.198.716.389 1.388.57 2.062z"/>
+    </g>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://ZCFZEUS.github.io/" selected>English</option>
+                                
+                                    <option value="https://ZCFZEUS.github.io/zh-cn/" >简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#详述">详述</a>
+      <ol>
+        <li><a href="#结构">结构</a></li>
+        <li><a href="#输出配置">输出配置</a></li>
+        <li><a href="#输入配置">输入配置</a></li>
+        <li><a href="#复用功能配置">复用功能配置</a></li>
+        <li><a href="#模拟配置">模拟配置</a></li>
+      </ol>
+    </li>
+    <li><a href="#gpio-库函数编程">GPIO 库函数编程</a></li>
+    <li><a href="#编程实例">编程实例</a>
+      <ol>
+        <li><a href="#led闪烁">LED闪烁</a></li>
+        <li><a href="#led流水灯">LED流水灯</a></li>
+        <li><a href="#蜂鸣器">蜂鸣器</a></li>
+        <li><a href="#按键控制led">按键控制LED</a></li>
+        <li><a href="#光敏传感器控制蜂鸣器">光敏传感器控制蜂鸣器</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/stm32/" >
+                STM32
+            </a>
+        
+            <a href="/categories/gpio/" >
+                GPIO
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/stm321-gpio/">Stm32(1) GPIO</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            关于GPIO
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 08, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    11 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="概述">概述
+</h2><p>GPIO,即通用 I/O(输入/输出)端口，是 STM32 可控制的引脚。STM32 芯片的 GPIO 引脚与外部设备连接起来，可实现与外部通讯、控制外部硬件或者采集外部硬件数据的功能。STM32F103 有 3 组 IO。分别为 GPIOA~GPIOC，每组 IO 有 16 个 IO 口，共有 48 个 IO 口。通常称为 PAx、PBx、PCx，其中 x 为 0-15，并且 F1 系列是基于 Cortex-M3 内核。</p>
+<p>GPIO 的复用：STM32F1 有很多的内置外设，这些外设的外部引脚都是与 GPIO 共用的。也就是说，一个引脚可以有很多作用，但是<mark>默认为 IO 口</mark>，如果想使用一个 GPIO 内置外设的功能引脚，就需要 GPIO 的复用，那么当这个 GPIO 作为内置外设使用的时候，就叫做<mark>复用</mark>。比如说串口就是 GPIO 复用为串口。</p>
+<p>GPIO 可以被配置为 8 中状态，其中输入输出各 4 种状态。<br>
+输出模式：可控制端口输出高低电平，用以驱动LED、控制蜂鸣器、模拟通信协议输出时序等<br>
+1 通用推挽输出<br>
+2 通用开漏输出<br>
+3 复用功能推挽输出模式<br>
+4 复用功能开漏输出模式</p>
+<p>输入模式:读取端口的高低电平或电压，用于读取按键输入、外接模块电平信号输入、ADC电压采集、模拟通信协议接收数据等<br>
+5 模拟输入模式<br>
+6 浮空输入模式<br>
+7 上拉输入模式<br>
+8 下拉输入模式</p>
+<h2 id="详述">详述
+</h2><h3 id="结构">结构
+</h3><p>基本机构：<br>
+<img src="/p/stm321-gpio/image.png"
+	width="895"
+	height="649"
+	srcset="/p/stm321-gpio/image_hu18040741606731464704.png 480w, /p/stm321-gpio/image_hu14093781674384168215.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="137"
+		data-flex-basis="330px"
+	
+></p>
+<p>位结构：<br>
+<img src="/p/stm321-gpio/image-1.png"
+	width="1382"
+	height="851"
+	srcset="/p/stm321-gpio/image-1_hu7430899981763047263.png 480w, /p/stm321-gpio/image-1_hu15837721434434454311.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="162"
+		data-flex-basis="389px"
+	
+></p>
+<p>GPIO模式：<br>
+通过配置GPIO的端口配置寄存器，端口可以配置成以下8种模式：<br>
+<img src="/p/stm321-gpio/image-5.png"
+	width="960"
+	height="371"
+	srcset="/p/stm321-gpio/image-5_hu9347709791564908495.png 480w, /p/stm321-gpio/image-5_hu5998805050139159435.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="258"
+		data-flex-basis="621px"
+	
+></p>
+<h3 id="输出配置">输出配置
+</h3><p>对 I/O 端口进行编程作为输出时：<br>
+1 输出缓冲器被打开：<br>
+<mark>&ndash;开漏模式：输出寄存器中的“0”可激活 N-MOS，而输出寄存器中的“1”会使端口保持高组态 (Hi-Z)（P-MOS 始终不激活）。<br>
+&ndash;推挽模式：输出寄存器中的“0”可激活 N-MOS，而输出寄存器中的“1”可激活 P-MOS。</mark><br>
+2 施密特触发器输入被打开<br>
+3 根据 GPIOx_PUPDR 寄存器中的值决定是否打开弱上拉电阻和下拉电阻<br>
+4 输入数据寄存器每隔 1 个 AHB1 时钟周期对 I/O 引脚上的数据进行一次采样<br>
+5 对输入数据寄存器的读访问可获取 I/O 状态<br>
+6 对输出数据寄存器的读访问可获取最后的写入值<br>
+<img src="/p/stm321-gpio/image-2.png"
+	width="863"
+	height="378"
+	srcset="/p/stm321-gpio/image-2_hu8813720427777646996.png 480w, /p/stm321-gpio/image-2_hu1626625111115018241.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="228"
+		data-flex-basis="547px"
+	
+><br>
+推挽电路（push-pull）就是两个不同极性晶体管间连接的输出电路。推挽电路采用两个参数相同的功率 BJT 管或 MOSFET 管，以推挽方式存在于电路中，各负责正负半周的波形放大任务，电路工作时，两只对称的功率开关管每次只有一个导通，所以导通损耗小效率高。推挽输出既可以向负载灌电流，也可以从负载抽取电流。 <br>
+在电路设计中，推挽输出是一种很常用的输出模式。推挽输出有很多优点，比如更低的损耗，更安全的输出等。推挽”之意，即为当一个管子推出去时，另一个管子拉回来。输入不同，交替导通。<br>
+<mark> 当输入信号为高电平的时候，上面的管子导通，下面的管子截止，输出信号为高电平。<br>
+当输入信号为低电平的时候，上面的管子截止，下面的管子导通，输出信号为低电平。</mark></p>
+<h3 id="输入配置">输入配置
+</h3><p>对 I/O 端口进行编程作为输入时：<br>
+1 输出缓冲器被关闭<br>
+2 施密特触发器输入被打开<br>
+3 根据 GPIOx_PUPDR 寄存器中的值决定是否打开上拉和下拉电阻<br>
+4 输入数据寄存器每隔 1 个 AHB1 时钟周期对 I/O 引脚上的数据进行一次采样<br>
+5 对输入数据寄存器的读访问可获取 I/O 状态<br>
+<img src="/p/stm321-gpio/image-4.png"
+	width="878"
+	height="426"
+	srcset="/p/stm321-gpio/image-4_hu17068197741029077060.png 480w, /p/stm321-gpio/image-4_hu18041069442047282863.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="206"
+		data-flex-basis="494px"
+	
+></p>
+<h3 id="复用功能配置">复用功能配置
+</h3><p>对 I/O 端口进行编程作为复用功能时：<br>
+1 可将输出缓冲器配置为开漏或推挽<br>
+2 输出缓冲器由来自外设的信号驱动（发送器使能和数据）<br>
+3 施密特触发器输入被打开<br>
+4 根据 GPIOx_PUPDR 寄存器中的值决定是否打开上拉电阻和下拉电阻<br>
+5 输入数据寄存器每隔 1 个 AHB1 时钟周期对 I/O 引脚上的数据进行一次采样<br>
+6 对输入数据寄存器的读访问可获取 I/O 状态<br>
+<img src="/p/stm321-gpio/image-6.png"
+	width="863"
+	height="425"
+	srcset="/p/stm321-gpio/image-6_hu17161898130796917327.png 480w, /p/stm321-gpio/image-6_hu461541057296090101.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="203"
+		data-flex-basis="487px"
+	
+></p>
+<h3 id="模拟配置">模拟配置
+</h3><p>对 I/O 端口进行编程作为模拟配置时：<br>
+1 输出缓冲器被禁止。<br>
+2 施密特触发器输入停用，I/O 引脚的每个模拟输入的功耗变为零。施密特触发器的输出被强制处理为恒定值 (0)。
+3 弱上拉和下拉电阻被关闭。<br>
+4 对输入数据寄存器的读访问值为“0”。<br>
+<mark>注：在模拟配置中，I/O 引脚不能为 5 V 容忍</mark><br>
+<img src="/p/stm321-gpio/image-7.png"
+	width="869"
+	height="445"
+	srcset="/p/stm321-gpio/image-7_hu3255850623151960212.png 480w, /p/stm321-gpio/image-7_hu6142738784898726536.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="195"
+		data-flex-basis="468px"
+	
+></p>
+<h2 id="gpio-库函数编程">GPIO 库函数编程
+</h2><p>调用 GPIO 寄存器步骤总结：<br>
+①端口硬件时钟使能<br>
+<img src="/p/stm321-gpio/image-8.png"
+	width="844"
+	height="320"
+	srcset="/p/stm321-gpio/image-8_hu18364046811861707899.png 480w, /p/stm321-gpio/image-8_hu16906536453607173666.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="263"
+		data-flex-basis="633px"
+	
+> <br>
+②GPIO 的初始化<br>
+<img src="/p/stm321-gpio/image-9.png"
+	width="837"
+	height="174"
+	srcset="/p/stm321-gpio/image-9_hu11840124268114778648.png 480w, /p/stm321-gpio/image-9_hu9844377756948285185.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="481"
+		data-flex-basis="1154px"
+	
+><br>
+③GPIO 初始化结构体<br>
+<img src="/p/stm321-gpio/image-10.png"
+	width="859"
+	height="259"
+	srcset="/p/stm321-gpio/image-10_hu7500807563377265353.png 480w, /p/stm321-gpio/image-10_hu4599155345629535976.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="331"
+		data-flex-basis="795px"
+	
+><br>
+<img src="/p/stm321-gpio/image-14.png"
+	width="1316"
+	height="489"
+	srcset="/p/stm321-gpio/image-14_hu12660311757654317623.png 480w, /p/stm321-gpio/image-14_hu7108310761928902696.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="269"
+		data-flex-basis="645px"
+	
+><br>
+④GPIO 的引脚电平设置<br>
+1 设置高电平<br>
+<img src="/p/stm321-gpio/image-11.png"
+	width="817"
+	height="169"
+	srcset="/p/stm321-gpio/image-11_hu11692569429313084367.png 480w, /p/stm321-gpio/image-11_hu3014308358919693454.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="483"
+		data-flex-basis="1160px"
+	
+><br>
+2 设置低电平<br>
+<img src="/p/stm321-gpio/image-12.png"
+	width="827"
+	height="170"
+	srcset="/p/stm321-gpio/image-12_hu7371001983004879431.png 480w, /p/stm321-gpio/image-12_hu8266205854782235104.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="486"
+		data-flex-basis="1167px"
+	
+><br>
+设置引脚电平，也可以尝试 GPIO_Write、GPIO_WriteBit 函数<br>
+3 读取某个端口的引脚电平<br>
+<img src="/p/stm321-gpio/image-13.png"
+	width="799"
+	height="185"
+	srcset="/p/stm321-gpio/image-13_hu111161114056295469.png 480w, /p/stm321-gpio/image-13_hu7036882970382575080.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="431"
+		data-flex-basis="1036px"
+	
+></p>
+<h2 id="编程实例">编程实例
+</h2><h3 id="led闪烁">LED闪烁
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Delay.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOA</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>	<span class="c1">//开启GPIOA的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//使用各个外设前必须开启时钟，否则对外设的操作无效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>					<span class="c1">//定义结构体变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_Out_PP</span><span class="p">;</span>		<span class="c1">//GPIO模式，赋值为推挽输出模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_0</span><span class="p">;</span>				<span class="c1">//GPIO引脚，赋值为第0号引脚
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>		<span class="c1">//GPIO速度，赋值为50MHz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>					<span class="c1">//将赋值后的构体变量传递给GPIO_Init函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//函数内部会自动根据结构体的参数配置相应寄存器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//实现GPIOA的初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*主循环，循环体内的代码会一直循环执行*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*设置PA0引脚的高低电平，实现LED闪烁，下面展示3种方法*/</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">		<span class="cm">/*方法1：GPIO_ResetBits设置低电平，GPIO_SetBits设置高电平*/</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_0</span><span class="p">);</span>					<span class="c1">//将PA0引脚设置为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>										<span class="c1">//延时500ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_0</span><span class="p">);</span>					<span class="c1">//将PA0引脚设置为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>										<span class="c1">//延时500ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		
+</span></span><span class="line"><span class="cl">		<span class="cm">/*方法2：GPIO_WriteBit设置低/高电平，由Bit_RESET/Bit_SET指定*/</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_WriteBit</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_0</span><span class="p">,</span> <span class="n">Bit_RESET</span><span class="p">);</span>		<span class="c1">//将PA0引脚设置为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>										<span class="c1">//延时500ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_WriteBit</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_0</span><span class="p">,</span> <span class="n">Bit_SET</span><span class="p">);</span>			<span class="c1">//将PA0引脚设置为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>										<span class="c1">//延时500ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		
+</span></span><span class="line"><span class="cl">		<span class="cm">/*方法3：GPIO_WriteBit设置低/高电平，由数据0/1指定，数据需要强转为BitAction类型*/</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_WriteBit</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_0</span><span class="p">,</span> <span class="p">(</span><span class="n">BitAction</span><span class="p">)</span><span class="mi">0</span><span class="p">);</span>		<span class="c1">//将PA0引脚设置为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>										<span class="c1">//延时500ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_WriteBit</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_0</span><span class="p">,</span> <span class="p">(</span><span class="n">BitAction</span><span class="p">)</span><span class="mi">1</span><span class="p">);</span>		<span class="c1">//将PA0引脚设置为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>										<span class="c1">//延时500ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="led流水灯">LED流水灯
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Delay.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOA</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>	<span class="c1">//开启GPIOA的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//使用各个外设前必须开启时钟，否则对外设的操作无效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>					<span class="c1">//定义结构体变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_Out_PP</span><span class="p">;</span>		<span class="c1">//GPIO模式，赋值为推挽输出模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_All</span><span class="p">;</span>				<span class="c1">//GPIO引脚，赋值为所有引脚
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>		<span class="c1">//GPIO速度，赋值为50MHz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>					<span class="c1">//将赋值后的构体变量传递给GPIO_Init函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//函数内部会自动根据结构体的参数配置相应寄存器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//实现GPIOA的初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*主循环，循环体内的代码会一直循环执行*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*使用GPIO_Write，同时设置GPIOA所有引脚的高低电平，实现LED流水灯*/</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0001</span><span class="p">);</span>	<span class="c1">//0000 0000 0000 0001，PA0引脚为低电平，其他引脚均为高电平，注意数据有按位取反
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0002</span><span class="p">);</span>	<span class="c1">//0000 0000 0000 0010，PA1引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0004</span><span class="p">);</span>	<span class="c1">//0000 0000 0000 0100，PA2引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0008</span><span class="p">);</span>	<span class="c1">//0000 0000 0000 1000，PA3引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0010</span><span class="p">);</span>	<span class="c1">//0000 0000 0001 0000，PA4引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0020</span><span class="p">);</span>	<span class="c1">//0000 0000 0010 0000，PA5引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0040</span><span class="p">);</span>	<span class="c1">//0000 0000 0100 0000，PA6引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">~</span><span class="mh">0x0080</span><span class="p">);</span>	<span class="c1">//0000 0000 1000 0000，PA7引脚为低电平，其他引脚均为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>				<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="蜂鸣器">蜂鸣器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Delay.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOB</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>	<span class="c1">//开启GPIOB的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//使用各个外设前必须开启时钟，否则对外设的操作无效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>					<span class="c1">//定义结构体变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_Out_PP</span><span class="p">;</span>		<span class="c1">//GPIO模式，赋值为推挽输出模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_12</span><span class="p">;</span>				<span class="c1">//GPIO引脚，赋值为第12号引脚
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>		<span class="c1">//GPIO速度，赋值为50MHz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>					<span class="c1">//将赋值后的构体变量传递给GPIO_Init函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//函数内部会自动根据结构体的参数配置相应寄存器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>															<span class="c1">//实现GPIOB的初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*主循环，循环体内的代码会一直循环执行*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>		<span class="c1">//将PB12引脚设置为低电平，蜂鸣器鸣叫
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>							<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>		<span class="c1">//将PB12引脚设置为高电平，蜂鸣器停止
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>							<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>		<span class="c1">//将PB12引脚设置为低电平，蜂鸣器鸣叫
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>							<span class="c1">//延时100ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>		<span class="c1">//将PB12引脚设置为高电平，蜂鸣器停止
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">700</span><span class="p">);</span>							<span class="c1">//延时700ms
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="按键控制led">按键控制LED
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//LED.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED初始化
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOA</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>		<span class="c1">//开启GPIOA的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_Out_PP</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_1</span> <span class="o">|</span> <span class="n">GPIO_Pin_2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>						<span class="c1">//将PA1和PA2引脚初始化为推挽输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*设置GPIO初始化后的默认电平*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span> <span class="o">|</span> <span class="n">GPIO_Pin_2</span><span class="p">);</span>				<span class="c1">//设置PA1和PA2引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED1开启
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED1_ON</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">);</span>		<span class="c1">//设置PA1引脚为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED1关闭
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED1_OFF</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">);</span>		<span class="c1">//设置PA1引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED1状态翻转
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED1_Turn</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">GPIO_ReadOutputDataBit</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>		<span class="c1">//获取输出寄存器的状态，如果当前引脚输出低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">);</span>					<span class="c1">//则设置PA1引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>													<span class="c1">//否则，即当前引脚输出高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">);</span>					<span class="c1">//则设置PA1引脚为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED2开启
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED2_ON</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_2</span><span class="p">);</span>		<span class="c1">//设置PA2引脚为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED2关闭
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED2_OFF</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_2</span><span class="p">);</span>		<span class="c1">//设置PA2引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：LED2状态翻转
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LED2_Turn</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">GPIO_ReadOutputDataBit</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>		<span class="c1">//获取输出寄存器的状态，如果当前引脚输出低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>                                                  
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_2</span><span class="p">);</span>               		<span class="c1">//则设置PA2引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>                                                  
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>                                               		<span class="c1">//否则，即当前引脚输出高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>                                                  
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span> <span class="n">GPIO_Pin_2</span><span class="p">);</span>             		<span class="c1">//则设置PA2引脚为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//Key.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Delay.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：按键初始化
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Key_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOB</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>		<span class="c1">//开启GPIOB的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_IPU</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_1</span> <span class="o">|</span> <span class="n">GPIO_Pin_11</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>						<span class="c1">//将PB1和PB11引脚初始化为上拉输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：按键获取键码
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：按下按键的键码值，范围：0~2，返回0代表没有按键按下
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 注意事项：此函数是阻塞式操作，当按键按住不放时，函数会卡住，直到按键松手
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint8_t</span> <span class="nf">Key_GetNum</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">uint8_t</span> <span class="n">KeyNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">//定义变量，默认键码值为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">GPIO_ReadInputDataBit</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>			<span class="c1">//读PB1输入寄存器的状态，如果为0，则代表按键1按下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>											<span class="c1">//延时消抖
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="nf">GPIO_ReadInputDataBit</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>	<span class="c1">//等待按键松手
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>											<span class="c1">//延时消抖
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">KeyNum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>												<span class="c1">//置键码为1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">GPIO_ReadInputDataBit</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_11</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>			<span class="c1">//读PB11输入寄存器的状态，如果为0，则代表按键2按下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>											<span class="c1">//延时消抖
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="nf">GPIO_ReadInputDataBit</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_11</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>	<span class="c1">//等待按键松手
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">Delay_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>											<span class="c1">//延时消抖
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">KeyNum</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>												<span class="c1">//置键码为2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">KeyNum</span><span class="p">;</span>			<span class="c1">//返回键码值，如果没有按键按下，所有if都不成立，则键码为默认值0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//main.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Delay.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;LED.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Key.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint8_t</span> <span class="n">KeyNum</span><span class="p">;</span>		<span class="c1">//定义用于接收按键键码的变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*模块初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">LED_Init</span><span class="p">();</span>		<span class="c1">//LED初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">Key_Init</span><span class="p">();</span>		<span class="c1">//按键初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">KeyNum</span> <span class="o">=</span> <span class="nf">Key_GetNum</span><span class="p">();</span>		<span class="c1">//获取按键键码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">KeyNum</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>			<span class="c1">//按键1按下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">LED1_Turn</span><span class="p">();</span>			<span class="c1">//LED1翻转
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">KeyNum</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>			<span class="c1">//按键2按下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">LED2_Turn</span><span class="p">();</span>			<span class="c1">//LED2翻转
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="光敏传感器控制蜂鸣器">光敏传感器控制蜂鸣器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//LightSensor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：光敏传感器初始化
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">LightSensor_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOB</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>		<span class="c1">//开启GPIOB的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_IPU</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_13</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>						<span class="c1">//将PB13引脚初始化为上拉输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：获取当前光敏传感器输出的高低电平
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：光敏传感器输出的高低电平，范围：0/1
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint8_t</span> <span class="nf">LightSensor_Get</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nf">GPIO_ReadInputDataBit</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_13</span><span class="p">);</span>			<span class="c1">//返回PB13输入寄存器的状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//Buzz.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：蜂鸣器初始化
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Buzzer_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*开启时钟*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOB</span><span class="p">,</span> <span class="n">ENABLE</span><span class="p">);</span>		<span class="c1">//开启GPIOB的时钟
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*GPIO初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitTypeDef</span> <span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span> <span class="o">=</span> <span class="n">GPIO_Mode_Out_PP</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span> <span class="o">=</span> <span class="n">GPIO_Pin_12</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span> <span class="o">=</span> <span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_Init</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span>						<span class="c1">//将PB12引脚初始化为推挽输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="cm">/*设置GPIO初始化后的默认电平*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>							<span class="c1">//设置PB12引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：蜂鸣器开启
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Buzzer_ON</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>		<span class="c1">//设置PB12引脚为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：蜂鸣器关闭
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Buzzer_OFF</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>		<span class="c1">//设置PB12引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 函    数：蜂鸣器状态翻转
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 参    数：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 返 回 值：无
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Buzzer_Turn</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">GPIO_ReadOutputDataBit</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>		<span class="c1">//获取输出寄存器的状态，如果当前引脚输出低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_SetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>						<span class="c1">//则设置PB12引脚为高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>														<span class="c1">//否则，即当前引脚输出高电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">GPIO_ResetBits</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span> <span class="n">GPIO_Pin_12</span><span class="p">);</span>						<span class="c1">//则设置PB12引脚为低电平
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">//main.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stm32f10x.h&#34;                  // Device header</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Delay.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Buzzer.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;LightSensor.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*模块初始化*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Buzzer_Init</span><span class="p">();</span>			<span class="c1">//蜂鸣器初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">LightSensor_Init</span><span class="p">();</span>		<span class="c1">//光敏传感器初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">LightSensor_Get</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>		<span class="c1">//如果当前光敏输出1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">Buzzer_ON</span><span class="p">();</span>				<span class="c1">//蜂鸣器开启
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>							<span class="c1">//否则
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">Buzzer_OFF</span><span class="p">();</span>				<span class="c1">//蜂鸣器关闭
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2005 - 
+        
+        2025 ZCFOREVER
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<meting-js
+	server="netease"
+	type="playlist"
+	id="13516764791">
+</meting-js>
+
+<script>
+
+
+const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+const cssPath = "https://ZCFZEUS.github.io/waifu/waifu.css"
+
+
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(cssPath, "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.js", "js")
+	]).then(() => {
+		
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			
+			cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
+			tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+		});
+	});
+}
+
+
+
+
+</script>
+
+
+    </body>
+</html>

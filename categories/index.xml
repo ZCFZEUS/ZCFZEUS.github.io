@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>ZCFOREVER</copyright>
-        <lastBuildDate>Tue, 08 Apr 2025 18:04:40 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 25 Apr 2025 18:36:15 +0800</lastBuildDate><atom:link href="https://ZCFZEUS.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>传感器</title>
+        <link>https://ZCFZEUS.github.io/categories/%E4%BC%A0%E6%84%9F%E5%99%A8/</link>
+        <pubDate>Fri, 25 Apr 2025 18:36:15 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/%E4%BC%A0%E6%84%9F%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>NumPy基础</title>
+        <link>https://ZCFZEUS.github.io/categories/numpy%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Fri, 11 Apr 2025 10:24:39 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/numpy%E5%9F%BA%E7%A1%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>深度学习</title>
+        <link>https://ZCFZEUS.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Fri, 11 Apr 2025 10:24:39 +0800</pubDate>
+        
+        <guid>https://ZCFZEUS.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>STM32</title>
         <link>https://ZCFZEUS.github.io/categories/stm32/</link>
         <pubDate>Tue, 08 Apr 2025 18:04:40 +0800</pubDate>
@@ -45,22 +69,6 @@
         <pubDate>Sun, 06 Apr 2025 18:09:35 +0800</pubDate>
         
         <guid>https://ZCFZEUS.github.io/categories/python%E5%9F%BA%E7%A1%80/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>深度学习</title>
-        <link>https://ZCFZEUS.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Sun, 06 Apr 2025 18:09:35 +0800</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>传感器</title>
-        <link>https://ZCFZEUS.github.io/categories/%E4%BC%A0%E6%84%9F%E5%99%A8/</link>
-        <pubDate>Sat, 05 Apr 2025 11:55:07 +0800</pubDate>
-        
-        <guid>https://ZCFZEUS.github.io/categories/%E4%BC%A0%E6%84%9F%E5%99%A8/</guid>
         <description></description>
         </item>
         <item>
